@@ -41,15 +41,15 @@ The basic workflow of how the tool works is as follows:
 6. Ray grid to base shape outline to get min distance and max distance attributes
 7. Create mask attribute based on the min and max distances
 8. For Each Connected Piece Loop 
-  - Random rotate to create variety
-  - Random scale to create variety
-  - Voronoi fracture to create rock like cracks and blocks in the final shape
-  - Delete small prims to ensure mesh integrity
-  - PolyExtrude based on mask attribute
+    - Random rotate to create variety
+    - Random scale to create variety
+    - Voronoi fracture to create rock like cracks and blocks in the final shape
+    - Delete small prims to ensure mesh integrity
+    - PolyExtrude based on mask attribute
 9. Mountain node to create variation in overall shape
 10. VDB -> Convert VDB to smooth out intersections
 11. VDB Fog volume -> Convert VDB
-  - 3 Volume Vops containing different noise volumes for large details
+    - 3 Volume Vops containing different noise volumes for large details
 12. Noise via attribute vops to create large and small rough patches (cuts) into rock 
 13. Delete small parts to ensure rock integrity
 14. Move mesh to center and rotate z up to prepare for export to Unreal (these steps can be turned off via a parameter)
