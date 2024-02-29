@@ -13,7 +13,8 @@ Features include:
 * Autogenerate uv maps for low poly assets and normal maps for high poly assets
 * Export options auto center pivot and rotate for easy import into Unreal Engine 5
 
-![materialId.gif](imgs/materialIdDemo.gif)
+![diffTypes.gif](img/diffTypes.gif)
+![highLow.png](img/highvslowLabeled.png)
 
 ## Asset Workflow
 The basic worflow for the using the tool in Houdini to importing assets in Unreal Engine is as follows:
@@ -27,9 +28,12 @@ The basic worflow for the using the tool in Houdini to importing assets in Unrea
 8. Apply materials and normal maps to low poly mesh
 
 ## Unreal Engine Examples
-Here are some examples of the rocks in Unreal Engine 5. All materials and other assets are from UE sample Valley of the Ancient project.
+Here are some examples of the rocks in Unreal Engine 5. All materials and ground/sky assets are from UE sample Valley of the Ancient project.
 
-
+![ueEnv.png](img/env.png)
+![ueEnvCompare.png](img/envCompare.png)
+![ueHighLow.png](img/ue5highvslow2.png)
+<img src="img/nanite.png" width="500" height="450">
 
 ## Tool workflow
 The basic workflow of how the tool works is as follows:
@@ -60,16 +64,18 @@ The basic workflow of how the tool works is as follows:
 19. Normal node
 20. LOW RES OUT
 
-![materialId.gif](imgs/materialIdDemo.gif)
-![materialId.gif](imgs/materialIdDemo.gif)
+![process.gif](img/process.gif)
+<p float="left">
+  <img src="img/nodeMap1.png" width="250" />
+  <img src="img/nodemap2.png" width="250" /> 
+</p>
+
 
 ## Base Meshes
 Base meshes can be very simple. The tool measures height data by creating a silhouette grid on the ground plane and measuring the ray distance between the grid and the original mesh.
 A mask attribute is then created with minimum and maximums set by the height data. This mask attribute controls the height of each piece when it is polyextruded upwards. 
 This attribute can be controlled by the artist via a ramp parameter. This allows for different height data trends, such as linearly going from minimum height to maximum height, 
 creating sharp contrasts between min and max height, or favoring one end of the spectrum (more taller heights vs more shorter heights). 
-
-![materialId.gif](imgs/materialIdDemo.gif)
 
 # My Process
 I went through several iterations of this tools in order to match artistic direction. 
